@@ -121,14 +121,14 @@ class BookingManager {
     public String bookTicket(Traveler traveler, TransportProvider provider, PaymentStrategy paymentStrategy) {
         StringBuilder output = new StringBuilder();
 
-        output.append("📌 Booking Ticket for: ").append(traveler.getName()).append("\n");
-        output.append("🔍 Reserving seat with ").append(provider.getType()).append(" provider...\n");
+        output.append(" Booking Ticket for: ").append(traveler.getName()).append("\n");
+        output.append(" Reserving seat with ").append(provider.getType()).append(" provider...\n");
         provider.reserveSeat();
 
-        output.append("💳 Processing payment via ").append(paymentStrategy.getType()).append("...\n");
+        output.append("Processing payment via ").append(paymentStrategy.getType()).append("...\n");
         paymentStrategy.pay();
 
-        String message = "✅ Ticket successfully booked for " + traveler.getName() + " using " +
+        String message = " Ticket successfully booked for " + traveler.getName() + " using " +
                 provider.getType() + " and paid via " + paymentStrategy.getType() + ".\n";
 
         output.append(message);
