@@ -1,3 +1,4 @@
+import java.util.List;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -125,7 +126,7 @@ class BookingManager {
         output.append(" Reserving seat with ").append(provider.getType()).append(" provider...\n");
         provider.reserveSeat();
 
-        output.append("Processing payment via ").append(paymentStrategy.getType()).append("...\n");
+        output.append(" Processing payment via ").append(paymentStrategy.getType()).append("...\n");
         paymentStrategy.pay();
 
         String message = " Ticket successfully booked for " + traveler.getName() + " using " +
@@ -255,4 +256,5 @@ class AdminLogger implements BookingObserver {
         System.out.println("[AdminLogger] Logged booking: " + message);
     }
 }
+
 
